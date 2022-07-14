@@ -1,10 +1,10 @@
-import 'package:bringme/common_widgets/app_primary_button.dart';
-import 'package:bringme/common_widgets/data_input_field.dart';
-import 'package:bringme/common_widgets/divider_widget.dart';
-import 'package:bringme/common_widgets/linkdin_container.dart';
-import 'package:bringme/common_widgets/logo_widget.dart';
-import 'package:bringme/common_widgets/password_input..dart';
-import 'package:bringme/common_widgets/text_widget.dart';
+import 'package:alterwis/common_widgets/app_primary_button.dart';
+import 'package:alterwis/common_widgets/data_input_field.dart';
+import 'package:alterwis/common_widgets/divider_widget.dart';
+import 'package:alterwis/common_widgets/linkdin_container.dart';
+import 'package:alterwis/common_widgets/logo_widget.dart';
+import 'package:alterwis/common_widgets/password_input..dart';
+import 'package:alterwis/common_widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

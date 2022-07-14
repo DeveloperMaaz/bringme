@@ -1,9 +1,8 @@
-import 'package:bringme/common_widgets/verification_code_input.dart';
+import 'package:alterwis/common_widgets/verification_code_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../common_widgets/app_primary_button.dart';
-import '../common_widgets/data_input_field.dart';
 import '../common_widgets/forget_pass_container.dart';
 import '../common_widgets/text_widget.dart';
 

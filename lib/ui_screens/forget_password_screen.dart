@@ -1,6 +1,6 @@
-import 'package:bringme/common_widgets/data_input_field.dart';
-import 'package:bringme/common_widgets/forget_pass_container.dart';
-import 'package:bringme/common_widgets/text_widget.dart';
+import 'package:alterwis/common_widgets/data_input_field.dart';
+import 'package:alterwis/common_widgets/forget_pass_container.dart';
+import 'package:alterwis/common_widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

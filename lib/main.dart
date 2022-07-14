@@ -1,9 +1,9 @@
-import 'package:bringme/ui_screens/create_new_password_screen.dart';
-import 'package:bringme/ui_screens/forget_password_screen.dart';
-import 'package:bringme/ui_screens/login_screen.dart';
-import 'package:bringme/ui_screens/register_screen.dart';
-import 'package:bringme/ui_screens/splash_screen.dart';
-import 'package:bringme/ui_screens/verification_code_screen.dart';
+import 'package:alterwis/ui_screens/create_new_password_screen.dart';
+import 'package:alterwis/ui_screens/forget_password_screen.dart';
+import 'package:alterwis/ui_screens/login_screen.dart';
+import 'package:alterwis/ui_screens/register_screen.dart';
+import 'package:alterwis/ui_screens/splash_screen.dart';
+import 'package:alterwis/ui_screens/verification_code_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

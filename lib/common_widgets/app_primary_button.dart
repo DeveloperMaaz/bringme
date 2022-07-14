@@ -1,4 +1,4 @@
-import 'package:bringme/common_widgets/text_widget.dart';
+import 'package:alterwis/common_widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

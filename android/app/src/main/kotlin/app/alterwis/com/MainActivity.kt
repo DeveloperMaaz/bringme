@@ -1,4 +1,4 @@
-package com.example.bringme
+package app.alterwis.com
 
 import io.flutter.embedding.android.FlutterActivity
 
