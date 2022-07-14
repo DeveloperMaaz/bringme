@@ -12,27 +12,29 @@ class ForgetScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController forget = TextEditingController();
-    return Scaffold(
-      body: Column(
-        children: [
-          const PasswordVerificationContainer(heading: "Forget Password",
-              subText: "Enter your email for verification purpose to reset your Password."),
-          Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 20.0,),
-                DataInputField(
-                    hint: "Email Address", textEditingController: forget),
-                SizedBox(height: 25.h,),
-                PrimaryButton(text: "Send Verification code",onTap: (){
-                  Navigator.pushNamed(context, "/verifyCode");
-                }),
-              ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            const PasswordVerificationContainer(heading: "Forget Password",
+                subText: "Enter your email for verification purpose to reset your Password."),
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20.0,),
+                  DataInputField(
+                      hint: "Email Address", textEditingController: forget),
+                  SizedBox(height: 25.h,),
+                  PrimaryButton(text: "Send Verification code",onTap: (){
+                    Navigator.pushNamed(context, "/verifyCode");
+                  }),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

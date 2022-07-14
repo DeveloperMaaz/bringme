@@ -13,6 +13,7 @@ class VerificationInputField extends StatelessWidget {
       width: 60.w,
       height: 64.h,
       child: TextFormField(
+        keyboardType: TextInputType.number,
         // obscuringCharacter: "*",
         obscureText: false,
         controller: controller,
@@ -21,13 +22,13 @@ class VerificationInputField extends StatelessWidget {
             borderRadius: BorderRadius.all(
               Radius.circular(6.0),
             ),
-            borderSide: BorderSide(color: Color(0xff082F69), width: 1),
+            borderSide: BorderSide(color:Color(0xffced4da), width: 1),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(6.0),
             ),
-            borderSide: BorderSide(color: Colors.blue, width: 1),
+            borderSide: BorderSide(color:  Color(0xff082F69), width: 1),
           ),
           //  contentPadding: const EdgeInsets.only(left: 10, right: 10),
           fillColor: Colors.transparent,

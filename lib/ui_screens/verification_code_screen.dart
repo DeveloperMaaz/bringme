@@ -11,65 +11,71 @@ class VerificationCodeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
-    return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            const PasswordVerificationContainer(
-                heading: "Verify Code",
-                subText:
-                    "We have send you your verification on your email. Please type verification code here."),
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      VerificationInputField(controller: controller),
-                      VerificationInputField(controller: controller),
-                      VerificationInputField(controller: controller),
-                      VerificationInputField(controller: controller),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 25.h,
-                  ),
-                  PrimaryButton(
-                    text: "Verify Code",
-                    onTap: () {
-                      Navigator.pushNamed(context, "/createPassword");
-                    },
-                  ),
-                  SizedBox(
-                    height: 17.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Heading(
-                        text: "Haven'\t received code ? ",
-                        type: HeadingType.xs,
-                      ),
-                      GestureDetector(
-                        child: const Heading(
-                          text: "Recent Code",
-                          weight: FontWeight.bold,
-                          type: HeadingType.s,
-                          color: Color(0xffFF4242),
+    TextEditingController controller1 = TextEditingController();
+    TextEditingController controller2 = TextEditingController();
+    TextEditingController controller3 = TextEditingController();
+    TextEditingController controller4 = TextEditingController();
+
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: Column(
+            children: [
+              const PasswordVerificationContainer(
+                  heading: "Verify Code",
+                  subText:
+                      "We have send you your verification on your email. Please type verification code here."),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        VerificationInputField(controller: controller1),
+                        VerificationInputField(controller: controller2),
+                        VerificationInputField(controller: controller3),
+                        VerificationInputField(controller: controller4),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 25.h,
+                    ),
+                    PrimaryButton(
+                      text: "Verify Code",
+                      onTap: () {
+                        Navigator.pushNamed(context, "/createPassword");
+                      },
+                    ),
+                    SizedBox(
+                      height: 17.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Heading(
+                          text: "Haven'\t received code ? ",
+                          type: HeadingType.xs,
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        GestureDetector(
+                          child: const Heading(
+                            text: "Recent Code",
+                            weight: FontWeight.bold,
+                            type: HeadingType.s,
+                            color: Color(0xffFF4242),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

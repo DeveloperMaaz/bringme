@@ -14,7 +14,7 @@ class PasswordVerificationContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 169.h,
+      height: 190.h,
       color: const Color(0xffF2F6FA),
       child: Padding(
         padding: const EdgeInsets.all(25.0),

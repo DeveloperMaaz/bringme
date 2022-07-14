@@ -5,8 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class PasswordField extends StatefulWidget {
-
-  const PasswordField({Key? key}) : super(key: key);
+  String hintPassword;
+  TextEditingController passController=TextEditingController();
+   PasswordField({required this.passController,this.hintPassword="Password",Key? key}) : super(key: key);
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -21,25 +22,26 @@ class _PasswordFieldState extends State<PasswordField> {
       height: 56.h,
       child: Stack(children: [
         TextFormField(
+          controller: widget.passController,
            obscuringCharacter: "*",
           obscureText: valueBool,
-          decoration: const InputDecoration(
-            enabledBorder: OutlineInputBorder(
+          decoration:  InputDecoration(
+            enabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(6.0),
+              ),
+              borderSide: BorderSide(color: Color(0xffced4da), width: 1),
+            ),
+            focusedBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(6.0),
               ),
               borderSide: BorderSide(color: Color(0xff082F69), width: 1),
             ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(6.0),
-              ),
-              borderSide: BorderSide(color: Colors.blue, width: 1),
-            ),
             //  contentPadding: const EdgeInsets.only(left: 10, right: 10),
             fillColor: Colors.transparent,
             // label: Text("data"),
-            hintText: "Password",
+            hintText: widget.hintPassword,
           ),
         ),
          Padding(
