@@ -11,24 +11,24 @@ class VerificationInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 60.w,
-      height: 64.h,
+      // height: 64.h,
       child: TextFormField(
         keyboardType: TextInputType.number,
-        // obscuringCharacter: "*",
         obscureText: false,
         controller: controller,
-        decoration: const InputDecoration(
+        decoration:  InputDecoration(
+          contentPadding: EdgeInsets.symmetric(horizontal: 23.w,vertical: 20.h),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(6.0),
+              Radius.circular(6.r),
             ),
-            borderSide: BorderSide(color:Color(0xffced4da), width: 1),
+            borderSide: BorderSide(color:const Color(0xffced4da), width: 1.w),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(6.0),
+              Radius.circular(6.r),
             ),
-            borderSide: BorderSide(color:  Color(0xff082F69), width: 1),
+            borderSide: BorderSide(color:  const Color(0xff082F69), width: 1.r),
           ),
           //  contentPadding: const EdgeInsets.only(left: 10, right: 10),
           fillColor: Colors.transparent,

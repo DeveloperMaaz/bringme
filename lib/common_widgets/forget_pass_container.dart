@@ -21,8 +21,8 @@ class PasswordVerificationContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 10.0,
+             SizedBox(
+              height: 10.h,
             ),
             GestureDetector(
               onTap: () {

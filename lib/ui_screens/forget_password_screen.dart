@@ -16,20 +16,35 @@ class ForgetScreen extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            const PasswordVerificationContainer(heading: "Forget Password",
-                subText: "Enter your email for verification purpose to reset your Password."),
+            const PasswordVerificationContainer(
+                heading: "Forget Password",
+                subText:
+                    "Enter your email for verification purpose to reset your Password."),
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 20.0,),
+                   SizedBox(
+                    height: 20.h,
+                  ),
                   DataInputField(
-                      hint: "Email Address", textEditingController: forget),
-                  SizedBox(height: 25.h,),
-                  PrimaryButton(text: "Send Verification code",onTap: (){
-                    Navigator.pushNamed(context, "/verifyCode");
-                  }),
+                      validation: (val) {
+                        if (val!.isEmpty) {
+                          return "please enter data";
+                        }
+                        return null;
+                      },
+                      hint: "Email Address",
+                      textEditingController: forget),
+                  SizedBox(
+                    height: 25.h,
+                  ),
+                  PrimaryButton(
+                      text: "Send Verification code",
+                      onTap: () {
+                        Navigator.pushNamed(context, "/verifyCode");
+                      }),
                 ],
               ),
             ),

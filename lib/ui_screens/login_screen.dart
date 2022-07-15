@@ -17,100 +17,129 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController userController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    final _formKey = GlobalKey<FormState>();
     return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: true,
-        body: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: SingleChildScrollView(
-            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 100.0,
-                ),
-                const LogoImage(),
-                const SizedBox(
-                  height: 60.0,
-                ),
-                const Heading(
-                  text: "Welcome Back",
-                  type: HeadingType.l,
-                  color: Color(0xffFF4242),
-                  weight: FontWeight.bold,
-                ),
-                const SizedBox(
-                  height: 15.0,
-                ),
-                const Heading(
-                  text:
-                      "We’re happy to see you again. You can continue to login for get easy access to your account.",
-                  type: HeadingType.s,
-                ),
-                const SizedBox(height: 30),
-                DataInputField(
-                    hint: "User Name", textEditingController: userController),
-                const SizedBox(height: 20),
-                 PasswordField(passController: passwordController),
-                const SizedBox(height: 7.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: const [
-                        ReUseCheckBox(),
-                        Heading(text: "Remember me", type: HeadingType.s),
-                      ],
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, "/forgetScreen");
+      child: Form(
+        key: _formKey,
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: SingleChildScrollView(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 100.h,
+                  ),
+                  const LogoImage(),
+                  SizedBox(
+                    height: 60.h,
+                  ),
+                  const Heading(
+                    text: "Welcome Back",
+                    type: HeadingType.l,
+                    color: Color(0xffFF4242),
+                    weight: FontWeight.bold,
+                  ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  const Heading(
+                    text:
+                        "We’re happy to see you again. You can continue to login for get easy access to your account.",
+                    type: HeadingType.s,
+                  ),
+                  SizedBox(height: 30.h),
+                  DataInputField(
+                      validation: (val) {
+                        if (val!.isEmpty) {
+                          return "Enter data";
+                        }
+                        return null;
                       },
-                      child: const Heading(
-                        text: "ForgetPassword",
-                        type: HeadingType.s,
-                        color: Color(0xff082F69),
+                      hint: "User Name",
+                      textEditingController: userController),
+                  SizedBox(height: 20.h),
+                  PasswordField(
+                      passController: passwordController,
+                      validation: (value) {
+                        if (value!.isEmpty) {
+                          return "Enter Password";
+                        }
+                        if (value.length <= 5) {
+                          return "Length must be greater than 5";
+                        }
+                      }),
+                  SizedBox(height: 7.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: const [
+                          ReUseCheckBox(),
+                          Heading(text: "Remember me", type: HeadingType.s),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20.0,
-                ),
-                 PrimaryButton(text: "Login",onTap: (){}),
-                const SizedBox(
-                  height: 15.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Heading(
-                      text: "Dont\'t have an account ? ",
-                      type: HeadingType.xs,
-                      color: Colors.black54,
-                    ),
-                    GestureDetector(
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, "/forgetScreen");
+                        },
+                        child: const Heading(
+                          text: "ForgetPassword",
+                          type: HeadingType.s,
+                          color: Color(0xff082F69),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  PrimaryButton(
+                      text: "Login",
                       onTap: () {
-                        Navigator.pushNamed(context, "/Register");
-                      },
-                      child: const Heading(
-                        text: "Register",
-                        type: HeadingType.s,
-                        color: Color(0xffFF4242),
+                        if (_formKey.currentState!.validate()) {
+                          // If the form is valid, display a snackbar. In the real world,
+                          // you'd often call a server or save the information in a database.
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Processing Data')),
+                          );
+                        }
+                      }),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Heading(
+                        text: "Dont\'t have an account ? ",
+                        type: HeadingType.xs,
+                        color: Colors.black54,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                const ReUseDivider(),
-                SizedBox(
-                  height: 20.h,
-                ),
-                const LinkedinLogin(),
-              ],
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, "/Register");
+                        },
+                        child: const Heading(
+                          text: "Register",
+                          type: HeadingType.s,
+                          color: Color(0xffFF4242),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  const ReUseDivider(),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  const LinkedinLogin(),
+                ],
+              ),
             ),
           ),
         ),

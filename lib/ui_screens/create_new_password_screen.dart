@@ -25,12 +25,12 @@ class CreateNewPassword extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 20.0,
+                   SizedBox(
+                    height: 20.h,
                   ),
                   PasswordField(passController: newPassController,hintPassword: "Create new Password"),
-                  const SizedBox(
-                    height: 18.0,
+                   SizedBox(
+                    height: 18.h,
                   ),
                   PasswordField(passController: confirmPasswordController,hintPassword: "Confirm Password"),
 
