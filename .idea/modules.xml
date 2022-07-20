@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/alterwis.iml" filepath="$PROJECT_DIR$/alterwis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/bringme_android.iml" filepath="$PROJECT_DIR$/android/bringme_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/alterwis.iml" filepath="$PROJECT_DIR$/.idea/alterwis.iml" />
     </modules>
   </component>
 </project>

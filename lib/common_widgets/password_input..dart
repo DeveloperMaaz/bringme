@@ -22,8 +22,6 @@ class PasswordField extends StatefulWidget {
 class _PasswordFieldState extends State<PasswordField> {
   bool valueBool = true;
 
-
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -62,7 +60,7 @@ class _PasswordFieldState extends State<PasswordField> {
                 //  contentPadding: const EdgeInsets.only(left: 10, right: 10),
                 fillColor: Colors.transparent,
                 // label: Text("data"),
-                hintText: widget.hintPassword,
+                labelText: widget.hintPassword,
                // contentPadding: const EdgeInsets.only(top: 10.0, left: 10.0),
               ),
             ),
@@ -76,8 +74,8 @@ class _PasswordFieldState extends State<PasswordField> {
                         valueBool = !valueBool;
                       });
                     },
-                    child: const Text(
-                      "Show",
+                    child:  Text(
+                      valueBool?"Show":"Hide",
                       style: TextStyle(color: Colors.black),
                     ),
                   )),
