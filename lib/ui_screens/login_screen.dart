@@ -59,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                           }
                           return null;
                         },
-                        hint: "Username",
+                        label: "Username",
                         textEditingController: c.userNameController),
                     SizedBox(height: 20.h),
                     PasswordField(

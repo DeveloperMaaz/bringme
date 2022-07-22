@@ -35,7 +35,7 @@ class ForgetScreen extends StatelessWidget {
                         }
                         return null;
                       },
-                      hint: "Email Address",
+                      label: "Email Address",
                       textEditingController: forget),
                   SizedBox(
                     height: 25.h,

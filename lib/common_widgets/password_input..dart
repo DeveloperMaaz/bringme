@@ -3,14 +3,16 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../constants/measures.dart';
+
 class PasswordField extends StatefulWidget {
-  final String hintPassword;
+  final String labelPassword;
   final TextEditingController passController;
   final FormFieldValidator<String>? validation;
 
   const PasswordField(
       {required this.passController,
-      this.hintPassword = "Password",
+      this.labelPassword = "Password",
       this.validation,
       Key? key})
       : super(key: key);
@@ -37,6 +39,7 @@ class _PasswordFieldState extends State<PasswordField> {
 
               decoration: InputDecoration(
 
+
                 contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
 
                 errorBorder:  OutlineInputBorder(
@@ -51,6 +54,12 @@ class _PasswordFieldState extends State<PasswordField> {
                   ),
                   borderSide: BorderSide(color: const Color(0xffced4da), width: 1.w),
                 ),
+                focusedErrorBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(Measures.textFieldBorderRadius),
+                  ),
+                  borderSide: BorderSide(color: Colors.red, width: 1),
+                ),
                 focusedBorder:  OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(6.r),
@@ -60,7 +69,7 @@ class _PasswordFieldState extends State<PasswordField> {
                 //  contentPadding: const EdgeInsets.only(left: 10, right: 10),
                 fillColor: Colors.transparent,
                 // label: Text("data"),
-                labelText: widget.hintPassword,
+                labelText: widget.labelPassword,
                // contentPadding: const EdgeInsets.only(top: 10.0, left: 10.0),
               ),
             ),
@@ -76,7 +85,7 @@ class _PasswordFieldState extends State<PasswordField> {
                     },
                     child:  Text(
                       valueBool?"Show":"Hide",
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   )),
             ),

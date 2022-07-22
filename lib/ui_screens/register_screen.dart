@@ -66,7 +66,7 @@ class RegisterScreen extends StatelessWidget {
                         }
                         return null;
                       },
-                      hint: "Full Name",
+                      label: "Full Name",
                       textEditingController: fullName),
                   SizedBox(
                     height: 14.h,
@@ -78,7 +78,7 @@ class RegisterScreen extends StatelessWidget {
                         }
                         return null;
                       },
-                      hint: "User Name",
+                      label: "User Name",
                       textEditingController: userName),
                   SizedBox(
                     height: 14.h,
@@ -90,7 +90,7 @@ class RegisterScreen extends StatelessWidget {
                         }
                         return null;
                       },
-                      hint: "Email Address",
+                      label: "Email Address",
                       textEditingController: emailAddress),
                   SizedBox(
                     height: 14.h,
@@ -102,7 +102,7 @@ class RegisterScreen extends StatelessWidget {
                         }
                         return null;
                       },
-                      hint: "Phone number",
+                      label: "Phone number",
                       textEditingController: phoneNumber),
                   SizedBox(
                     height: 14.h,
@@ -118,7 +118,7 @@ class RegisterScreen extends StatelessWidget {
                         text: TextSpan(
                             text: "I agree to",
                             style:
-                                TextStyle(color: const Color(0xff524B4B)),
+                                const TextStyle(color: Color(0xff524B4B)),
                             children: <TextSpan>[
                               TextSpan(
                                 text: "Terms of Services",

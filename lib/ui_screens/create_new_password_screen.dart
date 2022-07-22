@@ -29,11 +29,11 @@ class CreateNewPassword extends StatelessWidget {
                    SizedBox(
                     height: 20.h,
                   ),
-                  PasswordField(passController: newPassController,hintPassword: "Create new Password"),
+                  PasswordField(passController: newPassController,labelPassword: "Create new Password"),
                    SizedBox(
                     height: 18.h,
                   ),
-                  PasswordField(passController: confirmPasswordController,hintPassword: "Confirm Password"),
+                  PasswordField(passController: confirmPasswordController,labelPassword: "Confirm Password"),
 
                   SizedBox(
                     height: 25.h,

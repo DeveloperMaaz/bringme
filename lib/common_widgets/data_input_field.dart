@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DataInputField extends StatelessWidget {
-  final String hint;
+  final String label;
   final TextEditingController textEditingController;
   final FormFieldValidator<String>? validation;
 
   const DataInputField(
-      {required this.hint,
+      {required this.label,
       required this.textEditingController,
       this.validation,
       Key? key})
@@ -25,7 +25,7 @@ class DataInputField extends StatelessWidget {
         obscureText: false,
         controller: textEditingController,
         decoration: InputDecoration(
-          labelText: hint,
+          labelText: label,
           contentPadding:
               EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
           errorBorder: const OutlineInputBorder(
