@@ -53,12 +53,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 30.h),
                     DataInputField(
-                        validation: (val) {
-                          if (val!.isEmpty) {
-                            return "Enter data";
-                          }
-                          return null;
-                        },
+                        validation: (val)=>validateEmail(val),
                         label: "Username",
                         textEditingController: c.userNameController),
                     SizedBox(height: 20.h),
@@ -69,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                             return "Enter Password";
                           }
                           if (value.length <= 5) {
-                            return "Length must be greater than 5";
+                            return "Numbers is less than 5";
                           }
                         }),
                     SizedBox(height: 7.h),
@@ -145,5 +140,17 @@ class LoginScreen extends StatelessWidget {
             );
           }),
     );
+  }
+}
+   validateEmail(String? value) {
+  String pattern =
+      r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
+      r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
+      r"{0,253}[a-zA-Z0-9])?)*$";
+  RegExp regex = RegExp(pattern);
+  if (value == null || value.isEmpty || !regex.hasMatch(value)) {
+    return 'Enter a valid email address';
+  } else {
+    return null;
   }
 }

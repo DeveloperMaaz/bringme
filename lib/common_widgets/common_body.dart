@@ -17,7 +17,7 @@ class CommonBody extends StatelessWidget {
 }
 
 class CommonForm extends StatelessWidget {
-  CommonForm({this.formKey, required this.child});
+  CommonForm({Key? key, this.formKey, required this.child}) : super(key: key);
 
   var formKey;
   Widget child;
@@ -27,6 +27,7 @@ class CommonForm extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: Form(
+        autovalidateMode: AutovalidateMode.always,
         key: formKey,
         child: child,
       ),
